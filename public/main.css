@@ -88,3 +88,17 @@ div#videos > video {
     display: block;
     margin: 1em;
 }
+
+div#audio {
+  margin: 0 0 29px 0;
+}
+
+div#audio > div {
+  margin: 0 0 20px 0;
+}
+
+div.label {
+  display: inline-block;
+  font-weight: 400;
+  width: 120px;
+}

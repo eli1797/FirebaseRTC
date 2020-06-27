@@ -23,7 +23,7 @@
 <div id="buttons">
     <button class="mdc-button mdc-button--raised" id="cameraBtn">
         <i class="material-icons mdc-button__icon" aria-hidden="true">perm_camera_mic</i>
-        <span class="mdc-button__label">Open camera & microphone</span>
+        <span class="mdc-button__label">Enable microphone</span>
     </button>
     <button class="mdc-button mdc-button--raised" disabled id="createBtn">
         <i class="material-icons mdc-button__icon" aria-hidden="true">group_add</i>
@@ -41,9 +41,15 @@
 <div>
     <span id="currentRoom"></span>
 </div>
-<div id="videos">
-    <video id="localVideo" muted autoplay playsinline></video>
-    <video id="remoteVideo" autoplay playsinline></video>
+<div id="audio">
+    <div>
+        <div class="label">Local audio:</div>
+        <audio id="localAudio" autoplay controls muted></audio>
+    </div>
+    <div>
+        <div class="label">Remote audio:</div>
+        <audio id="remoteAudio" autoplay controls></audio>
+    </div>
 </div>
 <div class="mdc-dialog"
      id="room-dialog"
@@ -57,8 +63,8 @@
             <div class="mdc-dialog__content" id="my-dialog-content">
                 Enter ID for room to join:
                 <div class="mdc-text-field">
-                    <input type="text" id="room-id" class="mdc-text-field__input">
                     <label class="mdc-floating-label" for="my-text-field">Room ID</label>
+                    <input type="text" id="room-id" class="mdc-text-field__input">
                     <div class="mdc-line-ripple"></div>
                 </div>
             </div>

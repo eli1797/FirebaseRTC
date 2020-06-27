@@ -193,12 +193,12 @@ async function openUserMedia(e) {
     // stream = await navigator.getUserMedia({video: true, audio: true});
     stream = await navigator.getUserMedia({audio: true});
   }
-  document.querySelector('#localVideo').srcObject = stream;
+  document.querySelector('#localAudio').srcObject = stream;
   localStream = stream;
   remoteStream = new MediaStream();
-  document.querySelector('#remoteVideo').srcObject = remoteStream;
+  document.querySelector('#remoteAudio').srcObject = remoteStream;
 
-  console.log('Stream:', document.querySelector('#localVideo').srcObject);
+  console.log('Stream:', document.querySelector('#localAudio').srcObject);
   document.querySelector('#cameraBtn').disabled = true;
   document.querySelector('#joinBtn').disabled = false;
   document.querySelector('#createBtn').disabled = false;
@@ -206,7 +206,7 @@ async function openUserMedia(e) {
 }
 
 async function hangUp(e) {
-  const tracks = document.querySelector('#localVideo').srcObject.getTracks();
+  const tracks = document.querySelector('#localAudio').srcObject.getTracks();
   tracks.forEach(track => {
     track.stop();
   });
@@ -219,8 +219,8 @@ async function hangUp(e) {
     peerConnection.close();
   }
 
-  document.querySelector('#localVideo').srcObject = null;
-  document.querySelector('#remoteVideo').srcObject = null;
+  document.querySelector('#localAudio').srcObject = null;
+  document.querySelector('#remoteAudio').srcObject = null;
   document.querySelector('#cameraBtn').disabled = false;
   document.querySelector('#joinBtn').disabled = true;
   document.querySelector('#createBtn').disabled = true;
