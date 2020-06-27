@@ -187,9 +187,11 @@ async function joinRoomById(roomId) {
 async function openUserMedia(e) {
   let stream;
   try {
-    stream = await navigator.mediaDevices.getUserMedia({video: true, audio: true});
+    // stream = await navigator.mediaDevices.getUserMedia({video: true, audio: true});
+    stream = await navigator.mediaDevices.getUserMedia({audio: true});
   } catch(err) {
-    stream = await navigator.getUserMedia({video: true, audio: true});
+    // stream = await navigator.getUserMedia({video: true, audio: true});
+    stream = await navigator.getUserMedia({audio: true});
   }
   document.querySelector('#localVideo').srcObject = stream;
   localStream = stream;
